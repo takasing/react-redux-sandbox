@@ -1,0 +1,7 @@
+{
+  "name": "app",
+  "cwd": "build",
+  "script": "./server/index.js",
+  "out_file": "./stdout.log",
+  "error_file": "./stderr.log"
+}

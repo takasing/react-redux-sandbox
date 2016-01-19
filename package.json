@@ -8,8 +8,8 @@
     "express": "^4.13.3",
     "node-jsx": "^0.13.3",
     "pm2": "^0.15.10",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
     "react-redux": "^4.0.6",
     "redux": "^3.0.5"
   },
@@ -29,10 +29,11 @@
     "test": "mocha --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch",
     "build": "npm run js",
-    "js": "npm run babel",
+    "js": "npm run babel && npm run bundle",
     "babel": "babel src --out-dir build",
     "bundle": "browserify build/client/index.js -o public/bundle.js",
-    "start": "pm2 start --no-daemon"
+    "server": "pm2 start ./pm2/${NODE_ENV-local}.json --no-daemon",
+    "start": "npm run build && npm run server"
   },
   "repository": {
     "type": "git",
