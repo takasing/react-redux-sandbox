@@ -30,8 +30,8 @@
     "test:watch": "npm test -- --watch",
     "build": "npm run js",
     "js": "npm run babel",
-    "babel": "babel src --out-dir build && cp src/index.html build",
-    "bundle": "browserify build/index.js -o public/bundle.js",
+    "babel": "babel src --out-dir build",
+    "bundle": "browserify build/client/index.js -o public/bundle.js",
     "start": "pm2 start --no-daemon"
   },
   "repository": {
